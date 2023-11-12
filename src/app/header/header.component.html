@@ -13,7 +13,10 @@
   </ul>
 
   <div class="col-md-4 text-end">
-    <button type="button" class="btn btn-outline-primary me-2 btnLogin-popup">Login</button>
-    <button type="button" class="btn btn-primary btnRegister-popup">Sign-up</button>
+    <button type="button" class="btn btn-outline-primary me-2 btnLogin-popup" (click)="cambiar=false;mostrarFormulario=true">Login</button>
+    <button type="button" class="btn btn-primary btnRegister-popup" (click)="cambiar=true;mostrarFormulario=true">Sign-up</button>
   </div>
 </header>
+
+<app-login-register *ngIf="mostrarFormulario" [activar]="cambiar" (cerrar)="mostrarFormulario=$event"></app-login-register>
+
