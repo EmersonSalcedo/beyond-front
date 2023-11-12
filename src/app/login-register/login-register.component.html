@@ -1,0 +1,72 @@
+<div class="formulario">
+  <div class="wrapper" [ngClass]="activar?'active':''" >
+    <span class="icon-close" (click)="cerrar.emit(false)"><ion-icon name="close"></ion-icon></span>
+    <div class="form-box login">
+      <h2>Login</h2>
+      <form action="#">
+        <div class="input-box">
+          <span class="icon"><ion-icon name="mail"></ion-icon></span>
+          <input type="text" required>
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+          <input type="password" required>
+          <label>Contraseña</label>
+        </div>
+        <div class="remember-forgot">
+          <label><input type="checkbox" name="">Recuerdame</label>
+          <a href="#">Olvidaste tu Contraseña?</a>
+        </div>
+        <button type="submit" class="btnform">Login</button>
+        <div class="login_register">
+          <p>No tienes una cuenta? <a href="#" (click)="activar=true">Registrarse</a></p>
+        </div>
+      </form>
+    </div>
+
+    <div class="form-box register">
+      <h2>Registrarse</h2>
+      <form>
+        <div class="input-box">
+          <div class="input-field">
+            <input type="text" name="nombre" required>
+            <label>Nombres</label>
+          </div>
+          <div class="input-field">
+            <input type="text" name="apellidos" required>
+            <label>Apellidos</label>
+          </div>
+        </div>
+        <div class="input-box">
+          <div class="input-field">
+            <input type="text" name="email" required>
+            <label>Email</label>
+          </div>
+          <div class="input-field">
+            <input type="tel" name="telefono" required>
+            <label>Telefono</label>
+          </div>
+        </div>
+        <div class="input-box">
+          <div class="input-field">
+            <input type="password" name="contrasena" required>
+            <label>Contraseña</label>
+          </div>
+          <div class="input-field">
+            <input type="password" name="confirmarcontrasena" required>
+            <label>Confirmar Contraseña</label>
+          </div>
+        </div>
+        <div class="remember-forgot">
+          <label><input type="checkbox" name="">Acepto terminos y condiciones</label>
+        </div>
+        <button type="submit" class="btnform">Registrarse</button>
+        <div class="login_register">
+          <p>Ya tienes una cuenta? <a href="#" (click)="activar=false">Logueate</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
