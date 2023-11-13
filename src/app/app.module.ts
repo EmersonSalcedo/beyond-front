@@ -6,13 +6,17 @@ import { HeaderComponent } from './header/header.component';
 import {FormsModule} from "@angular/forms";
 import { LoginRegisterComponent } from './login-register/login-register.component';
 import { CallToActionComponent } from './call-to-action/call-to-action.component';
+import { FooterComponent } from './footer/footer.component';
+import { FeatureComponent } from './feature/feature.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LoginRegisterComponent,
-    CallToActionComponent
+    CallToActionComponent,
+    FooterComponent,
+    FeatureComponent
   ],
   imports: [
     BrowserModule,
