@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
   mostrarFormulario:Boolean=false;
   cambiar:Boolean=false;
+
+  cerrarFormulario(cerrar:boolean) {
+    this.mostrarFormulario=cerrar;
+  }
 }
