@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import {FormsModule} from "@angular/forms";
 import { LoginRegisterComponent } from './login-register/login-register.component';
+import { CallToActionComponent } from './call-to-action/call-to-action.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    LoginRegisterComponent
+    LoginRegisterComponent,
+    CallToActionComponent
   ],
   imports: [
     BrowserModule,
