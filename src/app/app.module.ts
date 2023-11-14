@@ -8,7 +8,21 @@ import { LoginRegisterComponent } from './login-register/login-register.componen
 import { CallToActionComponent } from './call-to-action/call-to-action.component';
 import { FooterComponent } from './footer/footer.component';
 import { FeatureComponent } from './feature/feature.component';
+import { ServiciosComponent } from './servicios/servicios.component';
+import {LoginService} from "./services/login.service";
+import {RegisterService} from "./services/register.service";
+import { HomePageComponent } from './home-page/home-page.component';
+import { ReservacionesPageComponent } from './reservaciones-page/reservaciones-page.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
+import {RouterModule, Routes} from "@angular/router";
+import { ReservasPageComponent } from './reservas-page/reservas-page.component';
 
+const appRoutes:Routes=[
+  {path:'',component:HomePageComponent},
+  {path:'reservar',component:ReservasPageComponent},
+  {path:'reservaciones',component:ReservacionesPageComponent},
+  {path:'perfil',component:ProfilePageComponent}
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,13 +30,19 @@ import { FeatureComponent } from './feature/feature.component';
     LoginRegisterComponent,
     CallToActionComponent,
     FooterComponent,
-    FeatureComponent
+    FeatureComponent,
+    ServiciosComponent,
+    HomePageComponent,
+    ReservacionesPageComponent,
+    ProfilePageComponent,
+    ReservasPageComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [LoginService,RegisterService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -1,26 +1,26 @@
 <div class="formulario">
   <div class="wrapper" [ngClass]="activar?'active':''" >
-    <span class="icon-close" (click)="cerrar.emit(false)"><ion-icon name="close"></ion-icon></span>
+    <span class="icon-close bg-primary-700 hover:bg-primary-800" (click)="cerrar.emit(false)"><ion-icon name="close"></ion-icon></span>
     <div class="form-box login">
       <h2>Login</h2>
       <form action="#">
         <div class="input-box">
           <span class="icon"><ion-icon name="mail"></ion-icon></span>
-          <input type="text" required>
+          <input class="focus:ring-0" type="text" required>
           <label>Email</label>
         </div>
         <div class="input-box">
           <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-          <input type="password" required>
+          <input class="focus:ring-0" type="password" required>
           <label>Contraseña</label>
         </div>
         <div class="remember-forgot">
-          <label><input type="checkbox" name="">Recuerdame</label>
-          <a href="#">Olvidaste tu Contraseña?</a>
+          <label><input class="focus:ring-0" type="checkbox" name="">Recuerdame</label>
+          <a href="#" class="text-primary-700 hover:text-primary-800">Olvidaste tu Contraseña?</a>
         </div>
-        <button type="submit" class="btnform">Login</button>
+        <button type="submit" class="btnform bg-primary-700 hover:bg-primary-800">Login</button>
         <div class="login_register">
-          <p>No tienes una cuenta? <a href="#" (click)="activar=true">Registrarse</a></p>
+          <p>No tienes una cuenta? <a href="#" class="text-primary-700 hover:text-primary-800" (click)="activar=true">Registrarse</a></p>
         </div>
       </form>
     </div>
@@ -30,40 +30,40 @@
       <form>
         <div class="input-box">
           <div class="input-field">
-            <input type="text" name="nombre" required>
+            <input class="focus:ring-0" type="text" name="nombre" required>
             <label>Nombres</label>
           </div>
           <div class="input-field">
-            <input type="text" name="apellidos" required>
+            <input class="focus:ring-0" type="text" name="apellidos" required>
             <label>Apellidos</label>
           </div>
         </div>
         <div class="input-box">
           <div class="input-field">
-            <input type="text" name="email" required>
+            <input class="focus:ring-0" type="text" name="email" required>
             <label>Email</label>
           </div>
           <div class="input-field">
-            <input type="tel" name="telefono" required>
+            <input class="focus:ring-0" type="tel" name="telefono" required>
             <label>Telefono</label>
           </div>
         </div>
         <div class="input-box">
           <div class="input-field">
-            <input type="password" name="contrasena" required>
+            <input class="focus:ring-0" type="password" name="contrasena" required>
             <label>Contraseña</label>
           </div>
           <div class="input-field">
-            <input type="password" name="confirmarcontrasena" required>
+            <input class="focus:ring-0" type="password" name="confirmarcontrasena" required>
             <label>Confirmar Contraseña</label>
           </div>
         </div>
         <div class="remember-forgot">
           <label><input type="checkbox" name="">Acepto terminos y condiciones</label>
         </div>
-        <button type="submit" class="btnform">Registrarse</button>
+        <button type="submit" class="btnform bg-primary-700 hover:bg-primary-800">Registrarse</button>
         <div class="login_register">
-          <p>Ya tienes una cuenta? <a href="#" (click)="activar=false">Logueate</a></p>
+          <p>Ya tienes una cuenta? <a href="#" class="text-primary-700 hover:text-primary-800" (click)="activar=false">Logueate</a></p>
         </div>
       </form>
     </div>

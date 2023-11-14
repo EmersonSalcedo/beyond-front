@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -8,8 +9,9 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
   mostrarFormulario:Boolean=false;
   cambiar:Boolean=false;
-
-  cerrarFormulario(cerrar:boolean) {
-    this.mostrarFormulario=cerrar;
+  constructor(private router:Router) {
+  }
+  getRuta():string{
+    return this.router.url
   }
 }
