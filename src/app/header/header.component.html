@@ -50,7 +50,9 @@
     </div>
   </nav>
 </header>
-<app-login-register *ngIf="mostrarFormulario" [activar]="cambiar"
-                    (cerrar)="mostrarFormulario=$event"></app-login-register>
+@if (mostrarFormulario) {
+  <app-login-register [activar]="cambiar" (cerrar)="mostrarFormulario=$event"></app-login-register>
+}
+
 
 
