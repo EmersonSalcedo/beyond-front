@@ -18,6 +18,7 @@ import { ReservasPageComponent } from './reservas-page/reservas-page.component';
 import {HttpClientModule} from "@angular/common/http";
 import {CookieService} from "ngx-cookie-service";
 import {ServiciosService} from "./services/servicios.service";
+import {ReservacionService} from "./services/reservacion.service";
 
 const appRoutes:Routes=[
   {path:'',component:HomePageComponent},
@@ -45,7 +46,7 @@ const appRoutes:Routes=[
     RouterModule.forRoot(appRoutes),
     HttpClientModule
   ],
-  providers: [AccessService,CookieService,ServiciosService],
+  providers: [AccessService,CookieService,ServiciosService,ReservacionService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

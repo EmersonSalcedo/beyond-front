@@ -6,6 +6,8 @@ import {Carpa} from "../models/Carpa";
 import {Lancha} from "../models/Lancha";
 import {Restaurante} from "../models/Restaurante";
 import {Reservacion} from "../models/Reservacion";
+import {Cliente} from "../models/Cliente";
+import {ReservacionService} from "../services/reservacion.service";
 
 @Component({
   selector: 'app-reservas-page',
@@ -23,7 +25,8 @@ export class ReservasPageComponent implements OnInit{
   tipo:string;
   playas=["Playa Blanca","Playa Bocagrande","Playa CastilloGrande"]
   reservacion:Reservacion=new Reservacion();
-  constructor(private router: Router, private accessService: AccessService,private serviciosService:ServiciosService) {
+  idCliente:number;
+  constructor(private router: Router, private accessService: AccessService,private serviciosService:ServiciosService,private reservacionService:ReservacionService) {
     this.accessService.verificarLogin().subscribe(
       (valor: boolean) => {
         this.logueado = valor;
@@ -36,6 +39,8 @@ export class ReservasPageComponent implements OnInit{
       (valor) => {
         if('nit' in valor){
           router.navigate([''])
+        }else{
+          this.idCliente=(valor as Cliente).id;
         }
       }
     )
@@ -73,13 +78,15 @@ export class ReservasPageComponent implements OnInit{
     this.reservacion.numHoras=event.target.value;
   }
   setFecha(event:any){
-    this.reservacion.fecha=event.target.value;
+    this.reservacion.fecha=event.target.value
   }
   reservar(){
     this.reservacion.idProveedor=this.objetoSeleccionado.idProveedor;
     this.reservacion.idPlaya=this.objetoSeleccionado.idPlaya;
     this.reservacion.tipoServicio=this.tipo;
     this.reservacion.nombreServicio=this.objetoSeleccionado.nombre;
+    this.reservacion.idCliente=this.idCliente;
+    this.reservacionService.Reservar(this.reservacion).subscribe();
   }
 
 
