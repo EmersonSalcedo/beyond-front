@@ -16,7 +16,6 @@ export class AccessService {
   private urlEndPointRegister: string = "http://localhost:8080/access/register"
   private urlEndPointLogin: string = "http://localhost:8080/access/login"
   private httpHeader = new HttpHeaders({'Content-Type': 'application/json'})
-  private rol:string;
 
   constructor(private http: HttpClient, private cookies: CookieService, private router: Router) {
   }
