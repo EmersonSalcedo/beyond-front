@@ -3,15 +3,15 @@
     <span class="icon-close bg-primary-700 hover:bg-primary-800" (click)="cerrar.emit(false)"><ion-icon name="close"></ion-icon></span>
     <div class="form-box login">
       <h2>Login</h2>
-      <form action="#">
+      <form (ngSubmit)="login()">
         <div class="input-box">
           <span class="icon"><ion-icon name="mail"></ion-icon></span>
-          <input class="focus:ring-0" type="text" required>
+          <input class="focus:ring-0" type="text" name="correo" [(ngModel)]="usuario.correo" required>
           <label>Email</label>
         </div>
         <div class="input-box">
           <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-          <input class="focus:ring-0" type="password" required>
+          <input class="focus:ring-0" type="password" name="contrasena" [(ngModel)]="usuario.contrasena" required>
           <label>Contraseña</label>
         </div>
         <div class="remember-forgot">
@@ -27,30 +27,30 @@
 
     <div class="form-box register">
       <h2>Registrarse</h2>
-      <form>
+      <form (ngSubmit)="registrar()">
         <div class="input-box">
           <div class="input-field">
-            <input class="focus:ring-0" type="text" name="nombre" required>
+            <input class="focus:ring-0" type="text" name="nombre" [(ngModel)]="cliente.nombre" required>
             <label>Nombres</label>
           </div>
           <div class="input-field">
-            <input class="focus:ring-0" type="text" name="apellidos" required>
+            <input class="focus:ring-0" type="text" name="apellidos" [(ngModel)]="cliente.apellido" required>
             <label>Apellidos</label>
           </div>
         </div>
         <div class="input-box">
           <div class="input-field">
-            <input class="focus:ring-0" type="text" name="email" required>
+            <input class="focus:ring-0" type="text" name="email" [(ngModel)]="usuario.correo" required>
             <label>Email</label>
           </div>
           <div class="input-field">
-            <input class="focus:ring-0" type="tel" name="telefono" required>
+            <input class="focus:ring-0" type="tel" name="telefono" required [(ngModel)]="cliente.telefono">
             <label>Telefono</label>
           </div>
         </div>
         <div class="input-box">
           <div class="input-field">
-            <input class="focus:ring-0" type="password" name="contrasena" required>
+            <input class="focus:ring-0" type="password" name="contrasena" required [(ngModel)]="usuario.contrasena">
             <label>Contraseña</label>
           </div>
           <div class="input-field">
@@ -59,7 +59,7 @@
           </div>
         </div>
         <div class="remember-forgot">
-          <label><input type="checkbox" name="">Acepto terminos y condiciones</label>
+          <label><input type="checkbox" name="" required>Acepto terminos y condiciones</label>
         </div>
         <button type="submit" class="btnform bg-primary-700 hover:bg-primary-800">Registrarse</button>
         <div class="login_register">

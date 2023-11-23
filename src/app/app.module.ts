@@ -9,13 +9,15 @@ import { CallToActionComponent } from './call-to-action/call-to-action.component
 import { FooterComponent } from './footer/footer.component';
 import { FeatureComponent } from './feature/feature.component';
 import { ServiciosComponent } from './servicios/servicios.component';
-import {LoginService} from "./services/login.service";
-import {RegisterService} from "./services/register.service";
+import {AccessService} from "./services/access.service";
 import { HomePageComponent } from './home-page/home-page.component';
 import { ReservacionesPageComponent } from './reservaciones-page/reservaciones-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import {RouterModule, Routes} from "@angular/router";
 import { ReservasPageComponent } from './reservas-page/reservas-page.component';
+import {HttpClientModule} from "@angular/common/http";
+import {CookieService} from "ngx-cookie-service";
+import {ServiciosService} from "./services/servicios.service";
 
 const appRoutes:Routes=[
   {path:'',component:HomePageComponent},
@@ -40,9 +42,10 @@ const appRoutes:Routes=[
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
-  providers: [LoginService,RegisterService],
+  providers: [AccessService,CookieService,ServiciosService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
